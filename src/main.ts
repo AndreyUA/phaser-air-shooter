@@ -6,7 +6,7 @@ import { preload } from "./preload";
 import { create } from "./create";
 import { update } from "./update";
 
-const config = {
+const config: Phaser.Types.Core.GameConfig = {
   type: Phaser.AUTO,
   width: 800,
   height: 600,
@@ -24,4 +24,4 @@ const config = {
   },
 };
 
-const game = new Phaser.Game(config);
+new Phaser.Game(config);
