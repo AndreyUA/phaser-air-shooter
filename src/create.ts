@@ -17,21 +17,21 @@ export function create(this: Phaser.Scene) {
     key: "left",
     frames: this.anims.generateFrameNumbers(GameObject.AIRPLANE, {
       start: 0,
-      end: 3,
+      end: 0,
     }),
     frameRate: 10,
     repeat: -1,
   });
   this.anims.create({
     key: "turn",
-    frames: [{ key: GameObject.AIRPLANE, frame: 4 }],
+    frames: [{ key: GameObject.AIRPLANE, frame: 1 }],
     frameRate: 20,
   });
   this.anims.create({
     key: "right",
     frames: this.anims.generateFrameNumbers(GameObject.AIRPLANE, {
-      start: 5,
-      end: 8,
+      start: 2,
+      end: 2,
     }),
     frameRate: 10,
     repeat: -1,

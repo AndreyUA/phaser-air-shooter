@@ -21,15 +21,18 @@ export function update() {
   // ! Move left
   if (cursors.left.isDown) {
     player.setVelocityX(-360);
+    player.anims.play("left", true);
   }
 
   // ! Move right
   if (cursors.right.isDown) {
     player.setVelocityX(360);
+    player.anims.play("right", true);
   }
 
   // ! Stop
   if (cursors.left.isUp && cursors.right.isUp) {
     player.setVelocityX(0);
+    player.anims.play("turn");
   }
 }
