@@ -1,8 +1,8 @@
 import { GameObject } from "./gameObjects";
-import airplane from "/assets/airplane.png";
+import spaceShip from "/assets/spaceShip.png";
 
 export async function preload(this: Phaser.Scene): Promise<void> {
-  this.load.spritesheet(GameObject.AIRPLANE, airplane, {
+  this.load.spritesheet(GameObject.SPACE_SHIP, spaceShip, {
     frameWidth: 48,
     frameHeight: 50,
   });

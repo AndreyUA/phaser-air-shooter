@@ -1,3 +1,3 @@
 export enum GameObject {
-  AIRPLANE = "AIRPLANE",
+  SPACE_SHIP = "SPACE_SHIP",
 }

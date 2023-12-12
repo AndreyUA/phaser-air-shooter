@@ -10,12 +10,12 @@ export function create(this: Phaser.Scene) {
     cursors = this.input.keyboard.createCursorKeys();
   }
 
-  player = this.physics.add.sprite(400, 576, GameObject.AIRPLANE);
+  player = this.physics.add.sprite(400, 576, GameObject.SPACE_SHIP);
   player.setBounce(0.2);
   player.setCollideWorldBounds(true);
   this.anims.create({
     key: "left",
-    frames: this.anims.generateFrameNumbers(GameObject.AIRPLANE, {
+    frames: this.anims.generateFrameNumbers(GameObject.SPACE_SHIP, {
       start: 0,
       end: 0,
     }),
@@ -24,12 +24,12 @@ export function create(this: Phaser.Scene) {
   });
   this.anims.create({
     key: "turn",
-    frames: [{ key: GameObject.AIRPLANE, frame: 1 }],
+    frames: [{ key: GameObject.SPACE_SHIP, frame: 1 }],
     frameRate: 20,
   });
   this.anims.create({
     key: "right",
-    frames: this.anims.generateFrameNumbers(GameObject.AIRPLANE, {
+    frames: this.anims.generateFrameNumbers(GameObject.SPACE_SHIP, {
       start: 2,
       end: 2,
     }),
