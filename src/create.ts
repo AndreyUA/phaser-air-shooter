@@ -1,6 +1,7 @@
 import * as Phaser from "phaser";
 
 import { GameObject } from "./gameObjects";
+import { starSkyCreation } from "./starSkyCreation";
 
 export let player: Phaser.Physics.Arcade.Sprite;
 export let cursors: Phaser.Types.Input.Keyboard.CursorKeys;
@@ -36,4 +37,6 @@ export function create(this: Phaser.Scene) {
     frameRate: 10,
     repeat: -1,
   });
+
+  starSkyCreation.call(this);
 }
