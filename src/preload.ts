@@ -1,4 +1,4 @@
-import { GameObject } from "./gameObjects";
+import { GameObject } from "./types/gameObjects";
 import spaceShip from "/assets/spaceShip.png";
 import starBig from "/assets/star-big.png";
 import starMedium from "/assets/star-medium.png";

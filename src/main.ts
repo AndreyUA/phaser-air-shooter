@@ -5,11 +5,12 @@ import * as Phaser from "phaser";
 import { preload } from "./preload";
 import { create } from "./create";
 import { update } from "./update";
+import { ScreenResolution } from "./types/screenResolution";
 
 const config: Phaser.Types.Core.GameConfig = {
   type: Phaser.AUTO,
-  width: 800,
-  height: 600,
+  width: ScreenResolution.WIDTH,
+  height: ScreenResolution.HEIGHT,
   scene: {
     preload,
     create,

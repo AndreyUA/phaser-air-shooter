@@ -1,18 +1,20 @@
 import * as Phaser from "phaser";
 
-import { GameObject } from "./gameObjects";
+import { GameObject } from "./types/gameObjects";
+import { ScreenResolution } from "./types/screenResolution";
 
 const createRandomGravityValue = () => Phaser.Math.Between(0.1, 1_000);
-const calculateRandomXPosition = () => Phaser.Math.Between(0, 800);
+const calculateRandomXPosition = () =>
+  Phaser.Math.Between(0, ScreenResolution.WIDTH);
 const destroyStars = (
   stars: Array<Phaser.Types.Physics.Arcade.ImageWithDynamicBody>
 ): Array<Phaser.Types.Physics.Arcade.ImageWithDynamicBody> =>
   stars.filter((star) => {
-    if (star.y > 600) {
+    if (star.y > ScreenResolution.HEIGHT) {
       star.destroy();
     }
 
-    return star.y < 600;
+    return star.y < ScreenResolution.HEIGHT;
   });
 
 let imagesArray: Array<Phaser.Types.Physics.Arcade.ImageWithDynamicBody> = [];

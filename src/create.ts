@@ -1,6 +1,6 @@
 import * as Phaser from "phaser";
 
-import { GameObject } from "./gameObjects";
+import { GameObject } from "./types/gameObjects";
 import { starSkyCreation } from "./starSkyCreation";
 
 export let player: Phaser.Physics.Arcade.Sprite;
