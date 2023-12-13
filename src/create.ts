@@ -1,7 +1,7 @@
 import * as Phaser from "phaser";
 
 import { GameObject } from "./types/gameObjects";
-import { starSkyCreation } from "./starSkyCreation";
+import { starSkyCreation } from "./objects/stars/starSkyCreation";
 
 export let player: Phaser.Physics.Arcade.Sprite;
 export let cursors: Phaser.Types.Input.Keyboard.CursorKeys;
