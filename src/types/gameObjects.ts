@@ -1,5 +1,6 @@
 export enum GameObject {
   SPACE_SHIP = "SPACE_SHIP",
+  ROCKET = "ROCKET",
   STAR_BIG = "STAR_BIG",
   STAR_MEDIUM = "STAR_MEDIUM",
   STAR_SMALL = "STAR_SMALL",
