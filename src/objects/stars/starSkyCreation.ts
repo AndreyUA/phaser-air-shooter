@@ -39,5 +39,5 @@ export function starSkyCreation(this: Phaser.Scene) {
     imagesArray = destroyStars(imagesArray);
   };
 
-  return setInterval(animate, 50);
+  return setInterval(animate, 400);
 }
