@@ -4,6 +4,18 @@ import { GameObject } from "./gameObjects";
 
 const createRandomGravityValue = () => Phaser.Math.Between(0.1, 1_000);
 const calculateRandomXPosition = () => Phaser.Math.Between(0, 800);
+const destroyStars = (
+  stars: Array<Phaser.Types.Physics.Arcade.ImageWithDynamicBody>
+): Array<Phaser.Types.Physics.Arcade.ImageWithDynamicBody> =>
+  stars.filter((star) => {
+    if (star.y > 600) {
+      star.destroy();
+    }
+
+    return star.y < 600;
+  });
+
+let imagesArray: Array<Phaser.Types.Physics.Arcade.ImageWithDynamicBody> = [];
 
 export function starSkyCreation(this: Phaser.Scene) {
   const animate = () => {
@@ -32,6 +44,9 @@ export function starSkyCreation(this: Phaser.Scene) {
 
     smallStar.setGravityY(createRandomGravityValue());
     smallStar.setDepth(-1);
+
+    imagesArray.push(bigStar, mediumStar, smallStar);
+    imagesArray = destroyStars(imagesArray);
   };
 
   return setInterval(animate, 50);
