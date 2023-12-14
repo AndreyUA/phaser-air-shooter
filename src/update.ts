@@ -1,5 +1,6 @@
-import { cursors, player } from "./create";
+import { cursors } from "./create";
 import { initRocket } from "./objects/rocket/initRocket";
+import { player } from "./objects/spaceShip/initSpaceShip";
 
 let timer: number | null = null;
 const RELOAD_TIME = 1_500;

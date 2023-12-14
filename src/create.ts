@@ -2,8 +2,8 @@ import * as Phaser from "phaser";
 
 import { GameObject } from "./types/gameObjects";
 import { starSkyCreation } from "./objects/stars/starSkyCreation";
+import { initSpaceShip } from "./objects/spaceShip/initSpaceShip";
 
-export let player: Phaser.Physics.Arcade.Sprite;
 export let cursors: Phaser.Types.Input.Keyboard.CursorKeys;
 
 export function create(this: Phaser.Scene) {
@@ -11,9 +11,6 @@ export function create(this: Phaser.Scene) {
     cursors = this.input.keyboard.createCursorKeys();
   }
 
-  player = this.physics.add.sprite(400, 576, GameObject.SPACE_SHIP);
-  player.setBounce(0.2);
-  player.setCollideWorldBounds(true);
   this.anims.create({
     key: "left",
     frames: this.anims.generateFrameNumbers(GameObject.SPACE_SHIP, {
@@ -38,5 +35,6 @@ export function create(this: Phaser.Scene) {
     repeat: -1,
   });
 
+  initSpaceShip.call(this);
   starSkyCreation.call(this);
 }
