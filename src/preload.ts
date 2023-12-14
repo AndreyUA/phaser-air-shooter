@@ -11,8 +11,12 @@ export async function preload(this: Phaser.Scene): Promise<void> {
     frameHeight: 50,
   });
 
+  this.load.spritesheet(GameObject.ROCKET, rocket, {
+    frameWidth: 48,
+    frameHeight: 50,
+  });
+
   this.load.image(GameObject.STAR_BIG, starBig);
   this.load.image(GameObject.STAR_MEDIUM, starMedium);
   this.load.image(GameObject.STAR_SMALL, starSmall);
-  this.load.image(GameObject.ROCKET, rocket);
 }
