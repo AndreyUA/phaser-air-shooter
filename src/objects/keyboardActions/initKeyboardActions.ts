@@ -1,6 +1,7 @@
 import * as Phaser from "phaser";
 
 import { GameObject } from "../../types/gameObjects";
+import { AnimationKeys } from "../../types/animationKeys";
 
 export let cursors: Phaser.Types.Input.Keyboard.CursorKeys;
 
@@ -10,7 +11,7 @@ export function initKeyboardActions(this: Phaser.Scene) {
   }
 
   this.anims.create({
-    key: "left",
+    key: AnimationKeys.LEFT,
     frames: this.anims.generateFrameNumbers(GameObject.SPACE_SHIP, {
       start: 0,
       end: 0,
@@ -19,12 +20,12 @@ export function initKeyboardActions(this: Phaser.Scene) {
     repeat: -1,
   });
   this.anims.create({
-    key: "turn",
+    key: AnimationKeys.TURN,
     frames: [{ key: GameObject.SPACE_SHIP, frame: 1 }],
     frameRate: 20,
   });
   this.anims.create({
-    key: "right",
+    key: AnimationKeys.RIGHT,
     frames: this.anims.generateFrameNumbers(GameObject.SPACE_SHIP, {
       start: 2,
       end: 2,
