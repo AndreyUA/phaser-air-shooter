@@ -1,4 +1,4 @@
-import { cursors } from "./create";
+import { cursors } from "./objects/keyboardActions/initKeyboardActions";
 import { initRocket } from "./objects/rocket/initRocket";
 import { player } from "./objects/spaceShip/initSpaceShip";
 
