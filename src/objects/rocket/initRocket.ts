@@ -1,11 +1,9 @@
 import * as Phaser from "phaser";
 
 import { GameObject } from "../../types/gameObjects";
-import { ScreenResolution } from "../../types/screenResolution";
 import { AnimationKeys } from "../../types/animationKeys";
-
-const ROCKET_Y_VELOCITY = ScreenResolution.HEIGHT * -1.7;
-const ROCKET_X_GRAVITY = 300;
+import { ROCKET_Y_VELOCITY } from "../../constants/rocketYVelocity";
+import { ROCKET_X_GRAVITY } from "../../constants/rocketXGravity";
 
 export function initRocket(
   this: Phaser.Scene,
