@@ -1,8 +1,8 @@
 import * as Phaser from "phaser";
 
 import { GameObject } from "./types/gameObjects";
-import { starSkyCreation } from "./objects/stars/starSkyCreation";
 import { initSpaceShip } from "./objects/spaceShip/initSpaceShip";
+import { initStarSkyCreation } from "./objects/stars/initStarSkyCreation";
 
 export let cursors: Phaser.Types.Input.Keyboard.CursorKeys;
 
@@ -36,5 +36,5 @@ export function create(this: Phaser.Scene) {
   });
 
   initSpaceShip.call(this);
-  starSkyCreation.call(this);
+  initStarSkyCreation.call(this);
 }

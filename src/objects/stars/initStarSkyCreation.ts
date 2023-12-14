@@ -7,7 +7,7 @@ import { destroyStars } from "./destroyStars";
 
 let imagesArray: Array<Phaser.Types.Physics.Arcade.ImageWithDynamicBody> = [];
 
-export function starSkyCreation(this: Phaser.Scene) {
+export function initStarSkyCreation(this: Phaser.Scene) {
   const animate = () => {
     const bigStar = this.physics.add.image(
       calculateRandomXPosition(),
