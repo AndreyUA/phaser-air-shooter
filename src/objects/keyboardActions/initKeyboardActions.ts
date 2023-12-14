@@ -33,4 +33,13 @@ export function initKeyboardActions(this: Phaser.Scene) {
     frameRate: 10,
     repeat: -1,
   });
+  this.anims.create({
+    key: AnimationKeys.FLY,
+    frames: this.anims.generateFrameNumbers(GameObject.ROCKET, {
+      start: 0,
+      end: 1,
+    }),
+    frameRate: 10,
+    repeat: -1,
+  });
 }

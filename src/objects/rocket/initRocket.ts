@@ -2,8 +2,8 @@ import * as Phaser from "phaser";
 
 import { GameObject } from "../../types/gameObjects";
 import { ScreenResolution } from "../../types/screenResolution";
+import { AnimationKeys } from "../../types/animationKeys";
 
-const FLY_ROCKET_ANIMATION = "fly";
 const ROCKET_Y_VELOCITY = ScreenResolution.HEIGHT * -1.7;
 const ROCKET_X_GRAVITY = 300;
 
@@ -17,17 +17,8 @@ export function initRocket(
     playerPositionY,
     GameObject.ROCKET
   );
-  this.anims.create({
-    key: FLY_ROCKET_ANIMATION,
-    frames: this.anims.generateFrameNumbers(GameObject.ROCKET, {
-      start: 0,
-      end: 1,
-    }),
-    frameRate: 10,
-    repeat: -1,
-  });
 
-  rocket.anims.play(FLY_ROCKET_ANIMATION, true);
+  rocket.anims.play(AnimationKeys.FLY, true);
   rocket.setGravityY(ROCKET_X_GRAVITY);
   rocket.setVelocityY(ROCKET_Y_VELOCITY);
   rocket.setDepth(0);
