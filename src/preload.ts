@@ -4,6 +4,7 @@ import starBig from "/assets/star-big.png";
 import starMedium from "/assets/star-medium.png";
 import starSmall from "/assets/star-small.png";
 import rocket from "/assets/rocket.png";
+import rocketCounter from "/assets/rocketCounter.png";
 
 export async function preload(this: Phaser.Scene): Promise<void> {
   this.load.spritesheet(GameObject.SPACE_SHIP, spaceShip, {
@@ -19,4 +20,5 @@ export async function preload(this: Phaser.Scene): Promise<void> {
   this.load.image(GameObject.STAR_BIG, starBig);
   this.load.image(GameObject.STAR_MEDIUM, starMedium);
   this.load.image(GameObject.STAR_SMALL, starSmall);
+  this.load.image(GameObject.ROCKET_COUNTER, rocketCounter);
 }

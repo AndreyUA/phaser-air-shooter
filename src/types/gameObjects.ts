@@ -4,4 +4,5 @@ export enum GameObject {
   STAR_BIG = "STAR_BIG",
   STAR_MEDIUM = "STAR_MEDIUM",
   STAR_SMALL = "STAR_SMALL",
+  ROCKET_COUNTER = "ROCKET_COUNTER",
 }
