@@ -4,6 +4,7 @@ import { GameObject } from "../../types/gameObjects";
 import { AnimationKeys } from "../../types/animationKeys";
 import { ROCKET_Y_VELOCITY } from "../../constants/rocketYVelocity";
 import { ROCKET_X_GRAVITY } from "../../constants/rocketXGravity";
+import { decrementRocketCounter } from "./rocketCounter";
 
 export function initRocket(
   this: Phaser.Scene,
@@ -20,6 +21,8 @@ export function initRocket(
   rocket.setGravityY(ROCKET_X_GRAVITY);
   rocket.setVelocityY(ROCKET_Y_VELOCITY);
   rocket.setDepth(0);
+
+  decrementRocketCounter();
 
   const interval = setInterval(() => {
     if (rocket.y < 0) {
