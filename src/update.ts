@@ -2,6 +2,7 @@ import { ROCKET_RELOAD_TIME } from "./constants/rocketReloadTime";
 import { cursors } from "./objects/keyboardActions/initKeyboardActions";
 import { initRocket } from "./objects/rocket/initRocket";
 import { renderRocketCounter } from "./objects/rocket/renderRocketCounter";
+import { getRocketCounter } from "./objects/rocket/rocketCounter";
 import { player } from "./objects/spaceShip/initSpaceShip";
 import { AnimationKeys } from "./types/animationKeys";
 
@@ -10,6 +11,10 @@ let timer: number | null = null;
 export function update(this: Phaser.Scene) {
   // ! Rocket fire
   if (Phaser.Input.Keyboard.JustDown(cursors.space)) {
+    if (getRocketCounter() === 0) {
+      return;
+    }
+
     if (!timer) {
       timer = Date.now();
       initRocket.call(this, player.x, player.y);
