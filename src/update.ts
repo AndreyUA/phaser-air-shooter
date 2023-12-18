@@ -1,6 +1,7 @@
 import { ROCKET_RELOAD_TIME } from "./constants/rocketReloadTime";
 import { cursors } from "./objects/keyboardActions/initKeyboardActions";
 import { initRocket } from "./objects/rocket/initRocket";
+import { renderRocketCounter } from "./objects/rocket/renderRocketCounter";
 import { player } from "./objects/spaceShip/initSpaceShip";
 import { AnimationKeys } from "./types/animationKeys";
 
@@ -12,11 +13,13 @@ export function update(this: Phaser.Scene) {
     if (!timer) {
       timer = Date.now();
       initRocket.call(this, player.x, player.y);
+      renderRocketCounter.call(this);
     }
 
     if (Date.now() - timer > ROCKET_RELOAD_TIME) {
       timer = Date.now();
       initRocket.call(this, player.x, player.y);
+      renderRocketCounter.call(this);
     }
   }
 
