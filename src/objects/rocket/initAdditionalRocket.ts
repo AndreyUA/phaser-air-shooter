@@ -1,15 +1,16 @@
 import { calculateRandomValueBetween0And100 } from "../../utils/calculateRandomValueBetween0And100";
+import { createAdditionalRocket } from "./createAdditionalRocket";
 import { getRocketCounter } from "./rocketCounter";
 
 // TODO: add additional rocket to the game and make it possible to collect it
-export function initAdditionalRocket(): void {
+export function initAdditionalRocket(this: Phaser.Scene): void {
   // ! 5% chance to add rocket if 8 rocket left
   if (
     getRocketCounter() === 8 &&
     calculateRandomValueBetween0And100() > 55 &&
     calculateRandomValueBetween0And100() <= 60
   ) {
-    console.log("its time to add rocket!");
+    createAdditionalRocket.call(this);
   }
 
   // ! 10% chance to add rocket if 7 rocket left
@@ -18,7 +19,7 @@ export function initAdditionalRocket(): void {
     calculateRandomValueBetween0And100() > 1 &&
     calculateRandomValueBetween0And100() <= 11
   ) {
-    console.log("its time to add rocket!");
+    createAdditionalRocket.call(this);
   }
 
   // ! 15% chance to add rocket if 6 rocket left
@@ -27,7 +28,7 @@ export function initAdditionalRocket(): void {
     calculateRandomValueBetween0And100() > 30 &&
     calculateRandomValueBetween0And100() <= 45
   ) {
-    console.log("its time to add rocket!");
+    createAdditionalRocket.call(this);
   }
 
   // ! 20% chance to add rocket if 5 rocket left
@@ -36,7 +37,7 @@ export function initAdditionalRocket(): void {
     calculateRandomValueBetween0And100() > 60 &&
     calculateRandomValueBetween0And100() <= 80
   ) {
-    console.log("its time to add rocket!");
+    createAdditionalRocket.call(this);
   }
 
   // ! 25% chance to add rocket if 4 rocket left
@@ -45,7 +46,7 @@ export function initAdditionalRocket(): void {
     calculateRandomValueBetween0And100() > 70 &&
     calculateRandomValueBetween0And100() <= 95
   ) {
-    console.log("its time to add rocket!");
+    createAdditionalRocket.call(this);
   }
 
   // ! 30% chance to add rocket if 3 rocket left
@@ -54,7 +55,7 @@ export function initAdditionalRocket(): void {
     calculateRandomValueBetween0And100() > 50 &&
     calculateRandomValueBetween0And100() <= 80
   ) {
-    console.log("its time to add rocket!");
+    createAdditionalRocket.call(this);
   }
 
   // ! 35% chance to add rocket if 2 rocket left
@@ -63,7 +64,7 @@ export function initAdditionalRocket(): void {
     calculateRandomValueBetween0And100() > 64 &&
     calculateRandomValueBetween0And100() <= 99
   ) {
-    console.log("its time to add rocket!");
+    createAdditionalRocket.call(this);
   }
 
   // ! 40% chance to add rocket if 1 rocket left
@@ -72,7 +73,7 @@ export function initAdditionalRocket(): void {
     calculateRandomValueBetween0And100() > 40 &&
     calculateRandomValueBetween0And100() <= 80
   ) {
-    console.log("its time to add rocket!");
+    createAdditionalRocket.call(this);
   }
 
   // ! 45% chance to add rocket if 0 rocket left
@@ -81,6 +82,6 @@ export function initAdditionalRocket(): void {
     calculateRandomValueBetween0And100() > 55 &&
     calculateRandomValueBetween0And100() <= 100
   ) {
-    console.log("its time to add rocket!");
+    createAdditionalRocket.call(this);
   }
 }
