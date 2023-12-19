@@ -10,31 +10,20 @@ let imagesArray: Array<Phaser.Types.Physics.Arcade.ImageWithDynamicBody> = [];
 export function initStarSkyCreation(this: Phaser.Scene) {
   // TODO: add restriction for numbers of stars because it might be too much
   const animate = () => {
-    const bigStar = this.physics.add.image(
-      calculateRandomXPosition(),
-      0,
-      GameObject.STAR_BIG
-    );
-    bigStar.setGravityY(createRandomGravityValue());
-    bigStar.setDepth(-1);
+    const bigStar = this.physics.add
+      .image(calculateRandomXPosition(), 0, GameObject.STAR_BIG)
+      .setGravityY(createRandomGravityValue())
+      .setDepth(-1);
 
-    const mediumStar = this.physics.add.image(
-      calculateRandomXPosition(),
-      0,
-      GameObject.STAR_MEDIUM
-    );
+    const mediumStar = this.physics.add
+      .image(calculateRandomXPosition(), 0, GameObject.STAR_MEDIUM)
+      .setGravityY(createRandomGravityValue())
+      .setDepth(-1);
 
-    mediumStar.setGravityY(createRandomGravityValue());
-    mediumStar.setDepth(-1);
-
-    const smallStar = this.physics.add.image(
-      calculateRandomXPosition(),
-      0,
-      GameObject.STAR_SMALL
-    );
-
-    smallStar.setGravityY(createRandomGravityValue());
-    smallStar.setDepth(-1);
+    const smallStar = this.physics.add
+      .image(calculateRandomXPosition(), 0, GameObject.STAR_SMALL)
+      .setGravityY(createRandomGravityValue())
+      .setDepth(-1);
 
     imagesArray.push(bigStar, mediumStar, smallStar);
     imagesArray = destroyStars(imagesArray);
