@@ -6,7 +6,7 @@ import { initKeyboardActions } from "./objects/keyboardActions/initKeyboardActio
 import { renderRocketCounter } from "./objects/rocket/renderRocketCounter";
 import { initAdditionalRocket } from "./objects/rocket/initAdditionalRocket";
 
-export function create(this: Phaser.Scene) {
+export function create(this: Phaser.Scene): void {
   initSpaceShip.call(this);
   initStarSkyCreation.call(this);
   initKeyboardActions.call(this);

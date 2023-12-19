@@ -1,3 +1,4 @@
 import * as Phaser from "phaser";
 
-export const createRandomGravityValue = () => Phaser.Math.Between(-250, -200);
+export const createRandomGravityValue = (): number =>
+  Phaser.Math.Between(-250, -200);

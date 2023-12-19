@@ -5,7 +5,7 @@ import { AnimationKeys } from "../../types/animationKeys";
 
 export let cursors: Phaser.Types.Input.Keyboard.CursorKeys;
 
-export function initKeyboardActions(this: Phaser.Scene) {
+export function initKeyboardActions(this: Phaser.Scene): void {
   if (this.input.keyboard) {
     cursors = this.input.keyboard.createCursorKeys();
   }

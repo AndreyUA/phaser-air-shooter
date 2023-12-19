@@ -6,7 +6,7 @@ import starSmall from "/assets/star-small.png";
 import rocket from "/assets/rocket.png";
 import rocketCounter from "/assets/rocketCounter.png";
 
-export async function preload(this: Phaser.Scene): Promise<void> {
+export function preload(this: Phaser.Scene): void {
   this.load.spritesheet(GameObject.SPACE_SHIP, spaceShip, {
     frameWidth: 48,
     frameHeight: 50,

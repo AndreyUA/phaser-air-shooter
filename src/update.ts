@@ -8,7 +8,7 @@ import { AnimationKeys } from "./types/animationKeys";
 
 let timer: number | null = null;
 
-export function update(this: Phaser.Scene) {
+export function update(this: Phaser.Scene): void {
   // ! Rocket fire
   if (Phaser.Input.Keyboard.JustDown(cursors.space)) {
     if (getRocketCounter() === 0) {
