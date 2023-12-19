@@ -1,8 +1,8 @@
 import * as Phaser from "phaser";
 
 import { GameObject } from "../../types/gameObjects";
-import { createRandomGravityValue } from "./createRandomGravityValue";
-import { calculateRandomXPosition } from "./calculateRandomXPosition";
+import { createRandomGravityValue } from "../../utils/createRandomGravityValue";
+import { calculateRandomXPosition } from "../../utils/calculateRandomXPosition";
 import { destroyStars } from "./destroyStars";
 
 let imagesArray: Array<Phaser.Types.Physics.Arcade.ImageWithDynamicBody> = [];
