@@ -2,7 +2,6 @@ import { calculateRandomValueBetween0And100 } from "../../utils/calculateRandomV
 import { createAdditionalRocket } from "./createAdditionalRocket";
 import { getRocketCounter } from "./rocketCounter";
 
-// TODO: add additional rocket to the game and make it possible to collect it
 export function initAdditionalRocket(this: Phaser.Scene): void {
   // ! 5% chance to add rocket if 8 rocket left
   if (
