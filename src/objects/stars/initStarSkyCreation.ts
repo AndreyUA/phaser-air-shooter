@@ -8,8 +8,13 @@ import { destroyStars } from "./destroyStars";
 let imagesArray: Array<Phaser.Types.Physics.Arcade.ImageWithDynamicBody> = [];
 
 export function initStarSkyCreation(this: Phaser.Scene): number {
-  // TODO: add restriction for numbers of stars because it might be too much
   const animate = () => {
+    if (imagesArray.length > 40) {
+      imagesArray = destroyStars(imagesArray);
+
+      return;
+    }
+
     const bigStar = this.physics.add
       .image(calculateRandomXPosition(), 0, GameObject.STAR_BIG)
       .setGravityY(createRandomGravityValue())
