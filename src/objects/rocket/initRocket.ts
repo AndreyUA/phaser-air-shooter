@@ -14,8 +14,6 @@ export function initRocket(
   playerPositionX: number,
   playerPositionY: number
 ): void {
-  console.log("do we have asteroid? >> ", asteroid);
-
   const rocket: Phaser.Physics.Arcade.Sprite = this.physics.add.sprite(
     playerPositionX,
     playerPositionY,
@@ -29,18 +27,18 @@ export function initRocket(
 
   decrementRocketCounter();
 
-  
   if (asteroid !== null) {
-    console.log('asteroid >> ', asteroid)
-    this.physics.add.collider(rocket!, asteroid);
-
     this.physics.add.overlap(
-      rocket!,
+      rocket,
       asteroid,
       () => {
-        console.log('rocket and asteroid overlap');
         decrementAsteroidCounter();
-        return asteroidExplosion.call(this, asteroid!, rocket);
+
+        if (asteroid) {
+          return asteroidExplosion.call(this, asteroid, rocket);
+        }
+
+        return null;
       },
       undefined,
       this
