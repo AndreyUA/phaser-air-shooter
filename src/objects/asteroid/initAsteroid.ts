@@ -1,7 +1,6 @@
 import * as Phaser from "phaser";
 
 import { GameObject } from "../../types/gameObjects";
-import { calculateRandomXPosition } from "../../utils/calculateRandomXPosition";
 import { player } from "../spaceShip/initSpaceShip";
 import { asteroidExplosion } from "./asteroidExplosion";
 import {
@@ -9,6 +8,7 @@ import {
   getAsteroidCounter,
   incrementAsteroidCounter,
 } from "./asteroidCounter";
+import { calculateRandomXPositionForAsteroid } from "./calculateRandomXPositionForAsteroid";
 
 export let asteroid: Phaser.Types.Physics.Arcade.ImageWithDynamicBody | null =
   null;
@@ -21,7 +21,7 @@ export function initAsteroid(this: Phaser.Scene): void {
 
   // ! Add asteroid to the game
   asteroid = this.physics.add
-    .image(calculateRandomXPosition(), 25, GameObject.ASTEROID)
+    .image(calculateRandomXPositionForAsteroid(), 25, GameObject.ASTEROID)
     .setGravityY(-250)
     .setDepth(0)
     .setCollideWorldBounds(true);
