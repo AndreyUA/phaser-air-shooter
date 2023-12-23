@@ -5,10 +5,10 @@ import { calculateRandomXPosition } from "../../utils/calculateRandomXPosition";
 import { player } from "../spaceShip/initSpaceShip";
 import { asteroidExplosion } from "./asteroidExplosion";
 import {
+  decrementAsteroidCounter,
   getAsteroidCounter,
   incrementAsteroidCounter,
 } from "./asteroidCounter";
-import { decrementRocketCounter } from "../rocket/rocketCounter";
 
 export let asteroid: Phaser.Types.Physics.Arcade.ImageWithDynamicBody | null =
   null;
@@ -35,7 +35,7 @@ export function initAsteroid(this: Phaser.Scene): void {
     if (body.gameObject === asteroid) {
       asteroid.body.world.off("worldbounds", worldBoundsHandler, this);
       asteroid.destroy();
-      decrementRocketCounter();
+      decrementAsteroidCounter();
       asteroid = null;
     }
   };
@@ -53,7 +53,7 @@ export function initAsteroid(this: Phaser.Scene): void {
     player,
     asteroid,
     () => {
-      decrementRocketCounter();
+      decrementAsteroidCounter();
       setTimeout(() => {
         asteroid = null;
       });
