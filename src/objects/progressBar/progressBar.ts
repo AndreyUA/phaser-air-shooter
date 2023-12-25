@@ -17,6 +17,7 @@ export abstract class ProgressBar {
   y: number;
   width: number;
   height: number;
+  scene: Phaser.Scene;
 
   constructor(config: ProgressBarConfig) {
     const { scene, x, y, width, height } = config;
@@ -27,6 +28,7 @@ export abstract class ProgressBar {
     this.y = y;
     this.width = width;
     this.height = height;
+    this.scene = scene;
 
     scene.add.existing(this.background);
     scene.add.existing(this.bar);

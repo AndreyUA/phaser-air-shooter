@@ -17,6 +17,7 @@ export class VerticalProgressBar extends ProgressBar {
     );
   }
 
+  // TODO: try to implement this method with Tween
   smoothUpdate(progress: number): void {
     this.update(progress);
   }
