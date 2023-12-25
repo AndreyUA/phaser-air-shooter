@@ -45,9 +45,6 @@ export function initAsteroid(this: Phaser.Scene): void {
   asteroid.body.world.on("worldbounds", worldBoundsHandler, this);
   // TODO: this is the end of copy-paste
 
-  // ! Add collision between player and asteroid
-  this.physics.add.collider(player, asteroid);
-
   // ! Add overlap between player and asteroid
   this.physics.add.overlap(
     player,
