@@ -39,7 +39,6 @@ export abstract class ProgressBar {
 
     this.background.clear();
     this.background.fillStyle(0xffffff, 1);
-    this.background.fillRect(this.x, this.y, this.width, this.height);
 
     this.bar.clear();
     this.bar.fillStyle(0xff0000, 1);
