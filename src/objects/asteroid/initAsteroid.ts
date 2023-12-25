@@ -26,6 +26,9 @@ export function initAsteroid(this: Phaser.Scene): void {
     .setDepth(0)
     .setCollideWorldBounds(true);
 
+  // ! Set asteroid rotation
+  asteroid.body.setAngularVelocity(80);
+
   // ! Increment asteroid counter
   incrementAsteroidCounter();
 
