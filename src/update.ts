@@ -16,6 +16,10 @@ export function update(this: Phaser.Scene): void {
       return;
     }
 
+    if (progressBar?.progress !== 1) {
+      return;
+    }
+
     if (!timer) {
       timer = Date.now();
       initRocket.call(this, player.x, player.y);

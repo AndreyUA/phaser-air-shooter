@@ -10,7 +10,7 @@ interface ProgressBarConfig {
 }
 
 export class ProgressBar {
-  progress: number = 0;
+  progress: number = 1;
   background: Phaser.GameObjects.Graphics;
   bar: Phaser.GameObjects.Graphics;
   x: number;
