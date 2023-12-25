@@ -19,9 +19,20 @@ export function initAsteroid(this: Phaser.Scene): void {
     return;
   }
 
+  // TODO: for some reasons ASTEROID_BIG is not working
+  const typeOfAsteroid =
+    Phaser.Math.Between(1, 2) === 1
+      ? GameObject.ASTEROID
+      : GameObject.ASTEROID_BIG;
+  // TODO: remove this
+  console.log(
+    "🚀 ~ file: initAsteroid.ts:24 ~ initAsteroid ~ typeOfAsteroid:",
+    typeOfAsteroid
+  );
+
   // ! Add asteroid to the game
   asteroid = this.physics.add
-    .image(calculateRandomXPositionForAsteroid(), 25, GameObject.ASTEROID)
+    .image(calculateRandomXPositionForAsteroid(), 25, typeOfAsteroid)
     .setGravityY(-250)
     .setDepth(0)
     .setCollideWorldBounds(true);

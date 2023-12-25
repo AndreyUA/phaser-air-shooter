@@ -6,6 +6,7 @@ import starSmall from "/assets/star-small.png";
 import rocket from "/assets/rocket.png";
 import rocketCounter from "/assets/rocketCounter.png";
 import asteroid from "/assets/asteroid.png";
+import asteroidBig from "/assets/asteroidBig.png";
 
 export function preload(this: Phaser.Scene): void {
   this.load.spritesheet(GameObject.SPACE_SHIP, spaceShip, {
@@ -23,4 +24,5 @@ export function preload(this: Phaser.Scene): void {
   this.load.image(GameObject.STAR_SMALL, starSmall);
   this.load.image(GameObject.ROCKET_COUNTER, rocketCounter);
   this.load.image(GameObject.ASTEROID, asteroid);
+  this.load.image(GameObject.ASTEROID_BIG, asteroidBig);
 }
