@@ -1,3 +1,5 @@
+import { ROCKET_RELOAD_TIME } from "../../constants/rocketReloadTime";
+
 interface ProgressBarConfig {
   scene: Phaser.Scene;
   x: number;
@@ -28,7 +30,7 @@ export class ProgressBar {
 
     scene.add.existing(this.background);
     scene.add.existing(this.bar);
-    this.update(0);
+    this.update(1);
   }
 
   private update(progress: number): void {
@@ -47,14 +49,18 @@ export class ProgressBar {
 
   public startProgress(): void {
     this.update(0);
+    this.progress = 0;
 
     const interval = setInterval(() => {
       this.progress += 0.01;
       this.update(this.progress);
 
-      if (this.progress >= 1) {
+      if (this.progress > 1) {
+        this.progress = 1;
+        this.update(this.progress);
+
         clearInterval(interval);
       }
-    }, 100);
+    }, ROCKET_RELOAD_TIME / 100);
   }
 }
