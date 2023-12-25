@@ -9,6 +9,7 @@ import { initAsteroid } from "./objects/asteroid/initAsteroid";
 import { initHorizontalProgressBar } from "./objects/progressBar/initHorizontalProgressBar";
 import { initVerticalProgressBar } from "./objects/progressBar/initVerticalProgressBar";
 import { ASTEROID_INTERVAL } from "./constants/asteroidInterval";
+import { ADDITIONAL_ROCKET_INTERVAL } from "./constants/additionalRocketInterval";
 
 export function create(this: Phaser.Scene): void {
   initSpaceShip.call(this);
@@ -25,5 +26,5 @@ export function create(this: Phaser.Scene): void {
 
   setInterval(() => {
     initAdditionalRocket.call(this);
-  }, 1_000);
+  }, ADDITIONAL_ROCKET_INTERVAL);
 }

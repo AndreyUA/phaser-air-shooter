@@ -1,0 +1,1 @@
+export const ADDITIONAL_ROCKET_INTERVAL = 1_000;
