@@ -1,7 +1,7 @@
 import { ROCKET_RELOAD_TIME } from "../../constants/rocketReloadTime";
 import { getRocketCounter } from "../rocket/rocketCounter";
 
-interface ProgressBarConfig {
+export interface ProgressBarConfig {
   scene: Phaser.Scene;
   x: number;
   y: number;
@@ -9,7 +9,7 @@ interface ProgressBarConfig {
   height: number;
 }
 
-export class ProgressBar {
+export abstract class ProgressBar {
   progress: number = 1;
   background: Phaser.GameObjects.Graphics;
   bar: Phaser.GameObjects.Graphics;
@@ -32,7 +32,7 @@ export class ProgressBar {
     scene.add.existing(this.bar);
   }
 
-  public updateHorizontal(progress: number): void {
+  public update(progress: number): void {
     if (progress < 0 || progress > 1) {
       return;
     }
@@ -43,11 +43,10 @@ export class ProgressBar {
 
     this.bar.clear();
     this.bar.fillStyle(0xff0000, 1);
-    this.bar.fillRect(this.x, this.y, this.width * progress, this.height);
   }
 
-  public startHorizontalProgress(): void {
-    this.updateHorizontal(0);
+  public startProgress(): void {
+    this.update(0);
     this.progress = 0;
 
     if (getRocketCounter() === 0) {
@@ -56,11 +55,11 @@ export class ProgressBar {
 
     const interval = setInterval(() => {
       this.progress += 0.01;
-      this.updateHorizontal(this.progress);
+      this.update(this.progress);
 
       if (this.progress > 1) {
         this.progress = 1;
-        this.updateHorizontal(this.progress);
+        this.update(this.progress);
 
         clearInterval(interval);
       }

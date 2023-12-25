@@ -1,9 +1,9 @@
-import { ProgressBar } from "./progressBar";
+import { HorizontalProgressBar } from "./horizontalProgressBar";
 
-export let progressBar: ProgressBar | null = null;
+export let horizontalProgressBar: HorizontalProgressBar | null = null;
 
 export function initHorizontalProgressBar(this: Phaser.Scene): void {
-  progressBar = new ProgressBar({
+  horizontalProgressBar = new HorizontalProgressBar({
     scene: this,
     x: 12,
     y: 52,
@@ -11,5 +11,5 @@ export function initHorizontalProgressBar(this: Phaser.Scene): void {
     height: 20,
   });
 
-  progressBar.updateHorizontal(1);
+  horizontalProgressBar.update(1);
 }
