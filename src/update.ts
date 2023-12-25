@@ -17,17 +17,17 @@ export function update(this: Phaser.Scene): void {
     }
 
     if (!timer) {
-      progressBar?.startProgress();
       timer = Date.now();
       initRocket.call(this, player.x, player.y);
       renderRocketCounter.call(this);
+      progressBar?.startProgress();
     }
 
     if (Date.now() - timer > ROCKET_RELOAD_TIME) {
-      progressBar?.startProgress();
       timer = Date.now();
       initRocket.call(this, player.x, player.y);
       renderRocketCounter.call(this);
+      progressBar?.startProgress();
     }
   }
 

@@ -1,4 +1,5 @@
 import { ROCKET_RELOAD_TIME } from "../../constants/rocketReloadTime";
+import { getRocketCounter } from "../rocket/rocketCounter";
 
 interface ProgressBarConfig {
   scene: Phaser.Scene;
@@ -50,6 +51,10 @@ export class ProgressBar {
   public startProgress(): void {
     this.update(0);
     this.progress = 0;
+
+    if (getRocketCounter() === 0) {
+      return;
+    }
 
     const interval = setInterval(() => {
       this.progress += 0.01;
