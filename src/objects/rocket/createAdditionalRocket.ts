@@ -36,9 +36,6 @@ export function createAdditionalRocket(this: Phaser.Scene): void {
   additionalRocket.body.world.on("worldbounds", worldBoundsHandler, this);
   // TODO: this is the end of copy-paste
 
-  // ! Add collision between player and additional rocket
-  this.physics.add.collider(player, additionalRocket);
-
   // ! Add overlap between player and additional rocket
   this.physics.add.overlap(
     player,
