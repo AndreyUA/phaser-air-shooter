@@ -7,6 +7,7 @@ import { renderRocketCounter } from "./objects/rocket/renderRocketCounter";
 import { initAdditionalRocket } from "./objects/rocket/initAdditionalRocket";
 import { initAsteroid } from "./objects/asteroid/initAsteroid";
 import { initHorizontalProgressBar } from "./objects/progressBar/initHorizontalProgressBar";
+import { initVerticalProgressBar } from "./objects/progressBar/initVerticalProgressBar";
 
 export function create(this: Phaser.Scene): void {
   initSpaceShip.call(this);
@@ -14,6 +15,7 @@ export function create(this: Phaser.Scene): void {
   initKeyboardActions.call(this);
   renderRocketCounter.call(this);
   initHorizontalProgressBar.call(this);
+  initVerticalProgressBar.call(this);
 
   initAsteroid.call(this);
   setInterval(() => {
