@@ -23,7 +23,6 @@ export class ProgressBar {
 
     this.bar = new Phaser.GameObjects.Graphics(scene);
     this.background = new Phaser.GameObjects.Graphics(scene);
-
     this.x = x;
     this.y = y;
     this.width = width;
@@ -31,10 +30,9 @@ export class ProgressBar {
 
     scene.add.existing(this.background);
     scene.add.existing(this.bar);
-    this.update(1);
   }
 
-  private update(progress: number): void {
+  public updateHorizontal(progress: number): void {
     if (progress < 0 || progress > 1) {
       return;
     }
@@ -48,8 +46,8 @@ export class ProgressBar {
     this.bar.fillRect(this.x, this.y, this.width * progress, this.height);
   }
 
-  public startProgress(): void {
-    this.update(0);
+  public startHorizontalProgress(): void {
+    this.updateHorizontal(0);
     this.progress = 0;
 
     if (getRocketCounter() === 0) {
@@ -58,11 +56,11 @@ export class ProgressBar {
 
     const interval = setInterval(() => {
       this.progress += 0.01;
-      this.update(this.progress);
+      this.updateHorizontal(this.progress);
 
       if (this.progress > 1) {
         this.progress = 1;
-        this.update(this.progress);
+        this.updateHorizontal(this.progress);
 
         clearInterval(interval);
       }
