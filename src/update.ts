@@ -1,5 +1,6 @@
 import { ROCKET_RELOAD_TIME } from "./constants/rocketReloadTime";
 import { cursors } from "./objects/keyboardActions/initKeyboardActions";
+import { progressBar } from "./objects/progressBar/initProgressBat";
 import { initRocket } from "./objects/rocket/initRocket";
 import { renderRocketCounter } from "./objects/rocket/renderRocketCounter";
 import { getRocketCounter } from "./objects/rocket/rocketCounter";
@@ -16,12 +17,14 @@ export function update(this: Phaser.Scene): void {
     }
 
     if (!timer) {
+      progressBar?.startProgress();
       timer = Date.now();
       initRocket.call(this, player.x, player.y);
       renderRocketCounter.call(this);
     }
 
     if (Date.now() - timer > ROCKET_RELOAD_TIME) {
+      progressBar?.startProgress();
       timer = Date.now();
       initRocket.call(this, player.x, player.y);
       renderRocketCounter.call(this);

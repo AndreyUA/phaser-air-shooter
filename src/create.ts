@@ -6,12 +6,14 @@ import { initKeyboardActions } from "./objects/keyboardActions/initKeyboardActio
 import { renderRocketCounter } from "./objects/rocket/renderRocketCounter";
 import { initAdditionalRocket } from "./objects/rocket/initAdditionalRocket";
 import { initAsteroid } from "./objects/asteroid/initAsteroid";
+import { initProgressBar } from "./objects/progressBar/initProgressBat";
 
 export function create(this: Phaser.Scene): void {
   initSpaceShip.call(this);
   initStarSkyCreation.call(this);
   initKeyboardActions.call(this);
   renderRocketCounter.call(this);
+  initProgressBar.call(this);
 
   initAsteroid.call(this);
   setInterval(() => {
