@@ -1,6 +1,6 @@
-import { ProgressBar, ProgressBarConfig } from "./progressBar";
+import { ProgressBar, ProgressBarConfig } from "../../utils/progressBar";
 
-export class VerticalProgressBar extends ProgressBar {
+export class HealthIndicator extends ProgressBar {
   constructor(config: ProgressBarConfig) {
     super(config);
   }

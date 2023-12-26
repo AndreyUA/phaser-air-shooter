@@ -2,7 +2,7 @@ import * as Phaser from "phaser";
 
 import { getRocketCounter, incrementRocketCounter } from "./rocketCounter";
 import { renderRocketCounter } from "./renderRocketCounter";
-import { horizontalProgressBar } from "../progressBar/initHorizontalProgressBar";
+import { reloadIndicator } from "../reloadIndicator/initReloadIndicator";
 
 export function collectRocket(
   this: Phaser.Scene,
@@ -13,6 +13,6 @@ export function collectRocket(
   renderRocketCounter.call(this);
 
   if (getRocketCounter() === 1) {
-    horizontalProgressBar?.startProgress();
+    reloadIndicator?.startProgress();
   }
 }

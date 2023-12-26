@@ -1,5 +1,5 @@
-import { ROCKET_RELOAD_TIME } from "../../constants/rocketReloadTime";
-import { getRocketCounter } from "../rocket/rocketCounter";
+import { ROCKET_RELOAD_TIME } from "../constants/rocketReloadTime";
+import { getRocketCounter } from "../objects/rocket/rocketCounter";
 
 export interface ProgressBarConfig {
   scene: Phaser.Scene;
