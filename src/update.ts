@@ -1,5 +1,5 @@
 import { ROCKET_RELOAD_TIME } from "./constants/rocketReloadTime";
-import { cursors } from "./objects/keyboardActions/initKeyboardActions";
+import { cursors } from "./objects/initKeyboardActionsAndGameAnimations/initKeyboardActionsAndGameAnimations";
 import { horizontalProgressBar } from "./objects/progressBar/initHorizontalProgressBar";
 import { initRocket } from "./objects/rocket/initRocket";
 import { renderRocketCounter } from "./objects/rocket/renderRocketCounter";

@@ -5,7 +5,7 @@ import { AnimationKeys } from "../../types/animationKeys";
 
 export let cursors: Phaser.Types.Input.Keyboard.CursorKeys;
 
-export function initKeyboardActions(this: Phaser.Scene): void {
+export function initKeyboardActionsAndGameAnimations(this: Phaser.Scene): void {
   if (this.input.keyboard) {
     cursors = this.input.keyboard.createCursorKeys();
   }
@@ -41,5 +41,14 @@ export function initKeyboardActions(this: Phaser.Scene): void {
     }),
     frameRate: 10,
     repeat: -1,
+  });
+  this.anims.create({
+    key: AnimationKeys.EXPLODE,
+    frames: this.anims.generateFrameNumbers(GameObject.EXPLOSION, {
+      start: 0,
+      end: 2,
+    }),
+    frameRate: 6,
+    repeat: 0,
   });
 }

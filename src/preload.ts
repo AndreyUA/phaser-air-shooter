@@ -7,6 +7,7 @@ import rocket from "/assets/rocket.png";
 import rocketCounter from "/assets/rocketCounter.png";
 import asteroid from "/assets/asteroid.png";
 import asteroidBig from "/assets/asteroidBig.png";
+import explosion from "/assets/explosion.png";
 
 export function preload(this: Phaser.Scene): void {
   this.load.spritesheet(GameObject.SPACE_SHIP, spaceShip, {
@@ -16,6 +17,11 @@ export function preload(this: Phaser.Scene): void {
 
   this.load.spritesheet(GameObject.ROCKET, rocket, {
     frameWidth: 48,
+    frameHeight: 50,
+  });
+
+  this.load.spritesheet(GameObject.EXPLOSION, explosion, {
+    frameWidth: 50,
     frameHeight: 50,
   });
 

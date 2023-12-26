@@ -3,4 +3,5 @@ export enum AnimationKeys {
   RIGHT = "right",
   TURN = "turn",
   FLY = "fly",
+  EXPLODE = "explode",
 }
