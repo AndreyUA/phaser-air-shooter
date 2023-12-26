@@ -21,7 +21,6 @@ export function createAdditionalRocket(this: Phaser.Scene): void {
     .setDepth(0)
     .setCollideWorldBounds(true);
 
-  // TODO: create util instead of copy-paste
   // ! Word bounds handler
   const worldBoundsHandler = (body: Phaser.Physics.Arcade.Body) => {
     if (body.gameObject === additionalRocket) {
@@ -34,7 +33,6 @@ export function createAdditionalRocket(this: Phaser.Scene): void {
   additionalRocket.body.onWorldBounds = true;
   // ! Add world bounds handler
   additionalRocket.body.world.on("worldbounds", worldBoundsHandler, this);
-  // TODO: this is the end of copy-paste
 
   // ! Add overlap between player and additional rocket
   this.physics.add.overlap(

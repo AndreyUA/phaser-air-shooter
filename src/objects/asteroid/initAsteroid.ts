@@ -37,7 +37,6 @@ export function initAsteroid(this: Phaser.Scene): void {
   // ! Increment asteroid counter
   incrementAsteroidCounter();
 
-  // TODO: create util instead of copy-paste
   // ! Word bounds handler
   const worldBoundsHandler = (body: Phaser.Physics.Arcade.Body) => {
     if (body.gameObject === asteroid) {
@@ -51,7 +50,6 @@ export function initAsteroid(this: Phaser.Scene): void {
   asteroid.body.onWorldBounds = true;
   // ! Add world bounds handler
   asteroid.body.world.on("worldbounds", worldBoundsHandler, this);
-  // TODO: this is the end of copy-paste
 
   // ! Add overlap between player and asteroid
   this.physics.add.overlap(
