@@ -45,6 +45,8 @@ export function initAsteroid(this: Phaser.Scene): void {
       asteroid.destroy();
       decrementAsteroidCounter();
       asteroid = null;
+
+      updateHealthCounter(-10);
     }
   };
   // ! Set world bounds
