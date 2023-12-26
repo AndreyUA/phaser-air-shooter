@@ -1,4 +1,5 @@
 import { ROCKET_RELOAD_TIME } from "./constants/rocketReloadTime";
+import { getIsGameOver } from "./objects/gameOver/isGameOver";
 import { cursors } from "./objects/initKeyboardActionsAndGameAnimations/initKeyboardActionsAndGameAnimations";
 import { reloadIndicator } from "./objects/reloadIndicator/initReloadIndicator";
 import { initRocket } from "./objects/rocket/initRocket";
@@ -10,6 +11,12 @@ import { AnimationKeys } from "./types/animationKeys";
 let timer: number | null = null;
 
 export function update(this: Phaser.Scene): void {
+  if (getIsGameOver()) {
+    this.scene.pause();
+
+    return;
+  }
+
   // ! Rocket fire
   if (Phaser.Input.Keyboard.JustDown(cursors.space)) {
     if (getRocketCounter() === 0) {

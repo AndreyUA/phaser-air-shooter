@@ -1,15 +1,22 @@
+import { setIsGameOver } from "../gameOver/isGameOver";
 import { healthIndicator } from "./initHealthIndicator";
 
 let healthCounter: number = 100;
 
-export const getHealthCounter = (): number => healthCounter;
+export const getHealthCounter = (): number => {
+  return healthCounter;
+};
 
 export const updateHealthCounter = (healthDifference: number): number => {
   const futureResult = healthCounter + healthDifference;
 
-  if (futureResult < 0) {
+  if (futureResult <= 0) {
     healthCounter = 0;
     healthIndicator?.smoothUpdate(0);
+
+    setTimeout(() => {
+      setIsGameOver();
+    }, 1_000);
 
     return getHealthCounter();
   }
