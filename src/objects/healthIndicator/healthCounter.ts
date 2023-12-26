@@ -18,6 +18,8 @@ export const updateHealthCounter = (healthDifference: number): number => {
       setIsGameOver();
     }, 1_000);
 
+    // TODO: add text "YOU DIED"
+
     return getHealthCounter();
   }
 
