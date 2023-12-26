@@ -9,6 +9,7 @@ import {
   incrementAsteroidCounter,
 } from "./asteroidCounter";
 import { calculateRandomXPositionForAsteroid } from "./calculateRandomXPositionForAsteroid";
+import { updateHealthCounter } from "../healthIndicator/healthCounter";
 
 export let asteroid: Phaser.Types.Physics.Arcade.ImageWithDynamicBody | null =
   null;
@@ -60,6 +61,8 @@ export function initAsteroid(this: Phaser.Scene): void {
       setTimeout(() => {
         asteroid = null;
       });
+      updateHealthCounter(-25);
+
       return asteroidExplosion.call(this, asteroid!);
     },
     undefined,

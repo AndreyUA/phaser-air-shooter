@@ -13,9 +13,4 @@ export function initHealthIndicator(this: Phaser.Scene): void {
   });
 
   healthIndicator.update(1);
-
-  // TODO: remove this! For tests only!
-  setTimeout(() => {
-    healthIndicator?.smoothUpdate(0.5);
-  }, 1_000);
 }
