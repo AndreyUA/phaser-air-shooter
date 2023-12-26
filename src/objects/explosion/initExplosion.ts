@@ -4,16 +4,16 @@ import { AnimationKeys } from "../../types/animationKeys";
 
 export function initExplosion(
   this: Phaser.Scene,
-  asteroid: Phaser.Types.Physics.Arcade.ImageWithDynamicBody,
-  rocket?: Phaser.Physics.Arcade.Sprite | null
+  asteroid?: Phaser.Types.Physics.Arcade.ImageWithDynamicBody,
+  sourceSprite?: Phaser.Physics.Arcade.Sprite | null
 ): void {
-  if (!rocket) {
+  if (!sourceSprite || !asteroid) {
     return;
   }
 
   const midPoint = {
-    x: (asteroid.x + rocket.x) / 2,
-    y: (asteroid.y + rocket.y) / 2,
+    x: (asteroid.x + sourceSprite.x) / 2,
+    y: (asteroid.y + sourceSprite.y) / 2,
   };
 
   const explosion = this.physics.add
