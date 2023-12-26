@@ -11,8 +11,13 @@ export function initExplosion(
     return;
   }
 
+  const midPoint = {
+    x: (asteroid.x + rocket.x) / 2,
+    y: (asteroid.y + rocket.y) / 2,
+  };
+
   const explosion = this.physics.add
-    .sprite(asteroid.x, asteroid.y, GameObject.EXPLOSION)
+    .sprite(midPoint.x, midPoint.y, GameObject.EXPLOSION)
     .setDepth(100)
     .setGravityY(100);
 
