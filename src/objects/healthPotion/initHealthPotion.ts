@@ -8,7 +8,6 @@ import { pickUpHealthPotion } from "./pickUpHealthPotion";
 let healthPoint: Phaser.Types.Physics.Arcade.ImageWithDynamicBody | null = null;
 
 export function initHealthPotion(this: Phaser.Scene): void {
-  console.log("healthPoint >> ", healthPoint);
   if (healthPoint) {
     return;
   }
