@@ -18,6 +18,10 @@ export function renderCurrentHealthPercents(this: Phaser.Scene): void {
       currentHealthPercentsText.setX(ScreenResolution.WIDTH - 45);
     }
 
+    if (getHealthCounter() >= 100) {
+      currentHealthPercentsText.setX(ScreenResolution.WIDTH - 50);
+    }
+
     return;
   }
 
