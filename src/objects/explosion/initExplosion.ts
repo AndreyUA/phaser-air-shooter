@@ -1,4 +1,5 @@
 import * as Phaser from "phaser";
+
 import { GameObject } from "../../types/gameObjects";
 import { AnimationKeys } from "../../types/animationKeys";
 
