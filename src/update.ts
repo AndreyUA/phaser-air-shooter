@@ -1,8 +1,8 @@
 import { ROCKET_RELOAD_TIME } from "./constants/rocketReloadTime";
 import { renderCurrentHealthPercents } from "./objects/healthIndicator/renderCurrentHealthPercents";
-import { initGameOver } from "./objects/initGameOver/initGameOver";
-import { getIsGameOver } from "./objects/initGameOver/isGameOver";
-import { cursors } from "./objects/initKeyboardActionsAndGameAnimations/initKeyboardActionsAndGameAnimations";
+import { initGameOver } from "./objects/gameOver/initGameOver";
+import { getIsGameOver } from "./objects/gameOver/isGameOver";
+import { cursors } from "./objects/keyboardActionsAndGameAnimations/initKeyboardActionsAndGameAnimations";
 import { reloadIndicator } from "./objects/reloadIndicator/initReloadIndicator";
 import { initRocket } from "./objects/rocket/initRocket";
 import { renderRocketCounter } from "./objects/rocket/renderRocketCounter";

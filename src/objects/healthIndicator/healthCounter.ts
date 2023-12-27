@@ -1,4 +1,4 @@
-import { setIsGameOver } from "../initGameOver/isGameOver";
+import { setIsGameOver } from "../gameOver/isGameOver";
 import { healthIndicator } from "./initHealthIndicator";
 
 let healthCounter: number = 100;

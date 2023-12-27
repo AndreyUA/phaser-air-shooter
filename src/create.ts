@@ -2,7 +2,7 @@ import * as Phaser from "phaser";
 
 import { initSpaceShip } from "./objects/spaceShip/initSpaceShip";
 import { initStarSkyCreation } from "./objects/stars/initStarSkyCreation";
-import { initKeyboardActionsAndGameAnimations } from "./objects/initKeyboardActionsAndGameAnimations/initKeyboardActionsAndGameAnimations";
+import { initKeyboardActionsAndGameAnimations } from "./objects/keyboardActionsAndGameAnimations/initKeyboardActionsAndGameAnimations";
 import { renderRocketCounter } from "./objects/rocket/renderRocketCounter";
 import { initAdditionalRocket } from "./objects/rocket/initAdditionalRocket";
 import { initAsteroid } from "./objects/asteroid/initAsteroid";
