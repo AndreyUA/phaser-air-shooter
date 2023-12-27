@@ -1,0 +1,1 @@
+export const HEALTH_POTION_INTERVAL = 15_000;

@@ -10,6 +10,8 @@ import { initReloadIndicator } from "./objects/reloadIndicator/initReloadIndicat
 import { initHealthIndicator } from "./objects/healthIndicator/initHealthIndicator";
 import { ASTEROID_INTERVAL } from "./constants/asteroidInterval";
 import { ADDITIONAL_ROCKET_INTERVAL } from "./constants/additionalRocketInterval";
+import { initHealthPotion } from "./objects/healthPotion/initHealthPotion";
+import { HEALTH_POTION_INTERVAL } from "./constants/healthPotionInterval";
 
 export function create(this: Phaser.Scene): void {
   initSpaceShip.call(this);
@@ -18,6 +20,10 @@ export function create(this: Phaser.Scene): void {
   renderRocketCounter.call(this);
   initReloadIndicator.call(this);
   initHealthIndicator.call(this);
+
+  setInterval(() => {
+    initHealthPotion.call(this);
+  }, HEALTH_POTION_INTERVAL);
 
   initAsteroid.call(this);
   setInterval(() => {
