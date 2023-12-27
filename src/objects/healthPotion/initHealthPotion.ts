@@ -4,11 +4,12 @@ import { calculateRandomXPosition } from "../../utils/calculateRandomXPosition";
 import { GameObject } from "../../types/gameObjects";
 import { player } from "../spaceShip/initSpaceShip";
 import { pickUpHealthPotion } from "./pickUpHealthPotion";
+import { getHealthCounter } from "../healthIndicator/healthCounter";
 
 let healthPoint: Phaser.Types.Physics.Arcade.ImageWithDynamicBody | null = null;
 
 export function initHealthPotion(this: Phaser.Scene): void {
-  if (healthPoint) {
+  if (healthPoint || getHealthCounter() === 100) {
     return;
   }
 
