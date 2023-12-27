@@ -1,4 +1,5 @@
 import { ROCKET_RELOAD_TIME } from "./constants/rocketReloadTime";
+import { renderCurrentHealthPercents } from "./objects/healthIndicator/renderCurrentHealthPercents";
 import { initGameOver } from "./objects/initGameOver/initGameOver";
 import { getIsGameOver } from "./objects/initGameOver/isGameOver";
 import { cursors } from "./objects/initKeyboardActionsAndGameAnimations/initKeyboardActionsAndGameAnimations";
@@ -12,6 +13,8 @@ import { AnimationKeys } from "./types/animationKeys";
 let timer: number | null = null;
 
 export function update(this: Phaser.Scene): void {
+  renderCurrentHealthPercents.call(this);
+
   if (getIsGameOver()) {
     initGameOver.call(this);
     this.scene.pause();

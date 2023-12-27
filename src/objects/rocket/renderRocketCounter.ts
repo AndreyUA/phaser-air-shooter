@@ -12,12 +12,13 @@ export function renderRocketCounter(this: Phaser.Scene): void {
     return;
   }
 
-  rocketCounterText = this.add.text(10, 10, createRocketCounterText(), {
-    fontSize: "26px",
-    fontStyle: "bold",
-    color: "#ff0000",
-  });
-  rocketCounterText.setDepth(2);
+  rocketCounterText = this.add
+    .text(10, 10, createRocketCounterText(), {
+      fontSize: "26px",
+      fontStyle: "bold",
+      color: "#ff0000",
+    })
+    .setDepth(2);
 
   this.add.image(120, 25, GameObject.ROCKET_COUNTER).setDepth(2);
 }
