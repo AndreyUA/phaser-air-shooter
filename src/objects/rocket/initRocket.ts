@@ -8,6 +8,7 @@ import { decrementRocketCounter } from "./rocketCounter";
 import { asteroid } from "../asteroid/initAsteroid";
 import { asteroidExplosion } from "../asteroid/asteroidExplosion";
 import { decrementAsteroidCounter } from "../asteroid/asteroidCounter";
+import { Sounds } from "../../types/sounds";
 
 export function initRocket(
   this: Phaser.Scene,
@@ -44,6 +45,8 @@ export function initRocket(
       this
     );
   }
+
+  this.sound.play(Sounds.ROCKET_START, { volume: 0.8 });
 
   const interval = setInterval(() => {
     if (rocket.y < 0) {
