@@ -10,17 +10,18 @@ import asteroidBig from "/assets/asteroidBig.png";
 import explosion from "/assets/explosion.png";
 import healthPotion from "/assets/additionalHealth.png";
 
+import backGround from "/audio/background.mp3";
+import { Sounds } from "./types/sounds";
+
 export function preload(this: Phaser.Scene): void {
   this.load.spritesheet(GameObject.SPACE_SHIP, spaceShip, {
     frameWidth: 48,
     frameHeight: 50,
   });
-
   this.load.spritesheet(GameObject.ROCKET, rocket, {
     frameWidth: 48,
     frameHeight: 50,
   });
-
   this.load.spritesheet(GameObject.EXPLOSION, explosion, {
     frameWidth: 50,
     frameHeight: 50,
@@ -33,4 +34,6 @@ export function preload(this: Phaser.Scene): void {
   this.load.image(GameObject.ASTEROID, asteroid);
   this.load.image(GameObject.ASTEROID_BIG, asteroidBig);
   this.load.image(GameObject.HEALTH_POTION, healthPotion);
+
+  this.load.audio(Sounds.BACKGROUND_MUSIC, backGround);
 }

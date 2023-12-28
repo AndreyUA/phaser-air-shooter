@@ -12,8 +12,11 @@ import { ASTEROID_INTERVAL } from "./constants/asteroidInterval";
 import { ADDITIONAL_ROCKET_INTERVAL } from "./constants/additionalRocketInterval";
 import { initHealthPotion } from "./objects/healthPotion/initHealthPotion";
 import { HEALTH_POTION_INTERVAL } from "./constants/healthPotionInterval";
+import { Sounds } from "./types/sounds";
 
 export function create(this: Phaser.Scene): void {
+  this.sound.play(Sounds.BACKGROUND_MUSIC, { loop: true, volume: 0.1 });
+
   initSpaceShip.call(this);
   initStarSkyCreation.call(this);
   initKeyboardActionsAndGameAnimations.call(this);
