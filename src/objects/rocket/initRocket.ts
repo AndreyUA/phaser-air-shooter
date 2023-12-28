@@ -46,7 +46,7 @@ export function initRocket(
     );
   }
 
-  this.sound.play(Sounds.ROCKET_START, { volume: 0.8 });
+  this.sound.play(Sounds.ROCKET_START);
 
   const interval = setInterval(() => {
     if (rocket.y < 0) {

@@ -13,6 +13,7 @@ import healthPotion from "/assets/additionalHealth.png";
 import { Sounds } from "./types/sounds";
 import backGround from "/audio/background.mp3";
 import rocketStart from "/audio/rocket-start.mp3";
+import explosionPlayer from "/audio/explosion-player.mp3";
 
 export function preload(this: Phaser.Scene): void {
   this.load.spritesheet(GameObject.SPACE_SHIP, spaceShip, {
@@ -38,4 +39,5 @@ export function preload(this: Phaser.Scene): void {
 
   this.load.audio(Sounds.BACKGROUND_MUSIC, backGround);
   this.load.audio(Sounds.ROCKET_START, rocketStart);
+  this.load.audio(Sounds.EXPLOSION_PLAYER, explosionPlayer);
 }

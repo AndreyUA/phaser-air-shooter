@@ -11,6 +11,7 @@ import {
 import { calculateRandomXPositionForAsteroid } from "./calculateRandomXPositionForAsteroid";
 import { updateHealthCounter } from "../healthIndicator/healthCounter";
 import { initExplosion } from "../explosion/initExplosion";
+import { Sounds } from "../../types/sounds";
 
 export let asteroid: Phaser.Types.Physics.Arcade.ImageWithDynamicBody | null =
   null;
@@ -66,6 +67,7 @@ export function initAsteroid(this: Phaser.Scene): void {
       });
       updateHealthCounter(-25);
       initExplosion.call(this, asteroid!, player);
+      this.sound.play(Sounds.EXPLOSION_PLAYER);
 
       return asteroidExplosion.call(this, asteroid!);
     },
