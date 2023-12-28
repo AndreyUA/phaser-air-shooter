@@ -1,5 +1,6 @@
 import * as Phaser from "phaser";
 import { updateHealthCounter } from "../healthIndicator/healthCounter";
+import { Sounds } from "../../types/sounds";
 
 export function pickUpHealthPotion(
   this: Phaser.Scene,
@@ -7,4 +8,5 @@ export function pickUpHealthPotion(
 ): void {
   updateHealthCounter(5);
   healthPoint.destroy();
+  this.sound.play(Sounds.HEAL);
 }

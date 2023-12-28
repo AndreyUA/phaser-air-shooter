@@ -3,4 +3,5 @@ export enum Sounds {
   ROCKET_START = "rocketStart",
   EXPLOSION_PLAYER = "explosionPlayer",
   EXPLOSION_ROCKET = "explosionRocket",
+  HEAL = "heal",
 }
