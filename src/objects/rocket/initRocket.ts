@@ -36,6 +36,8 @@ export function initRocket(
         decrementAsteroidCounter();
 
         if (asteroid) {
+          this.sound.play(Sounds.EXPLOSION_ROCKET);
+
           return asteroidExplosion.call(this, asteroid, rocket);
         }
 
