@@ -47,7 +47,7 @@ export function initAsteroid(this: Phaser.Scene): void {
       asteroid.destroy();
       decrementAsteroidCounter();
       asteroid = null;
-
+      this.sound.play(Sounds.MISSED_ASTEROID_ALARM);
       updateHealthCounter(-10);
     }
   };

@@ -17,6 +17,7 @@ import explosionPlayer from "/audio/explosion-player.mp3";
 import explosionRocket from "/audio/explosion-rocket.mp3";
 import heal from "/audio/heal.mp3";
 import reload from "/audio/reload.mp3";
+import missedAsteroidAlarm from "/audio/missed-asteroid-alarm.mp3";
 
 export function preload(this: Phaser.Scene): void {
   this.load.spritesheet(GameObject.SPACE_SHIP, spaceShip, {
@@ -46,4 +47,5 @@ export function preload(this: Phaser.Scene): void {
   this.load.audio(Sounds.EXPLOSION_ROCKET, explosionRocket);
   this.load.audio(Sounds.HEAL, heal);
   this.load.audio(Sounds.RELOAD, reload);
+  this.load.audio(Sounds.MISSED_ASTEROID_ALARM, missedAsteroidAlarm);
 }
