@@ -9,11 +9,13 @@ import { renderRocketCounter } from "./objects/rocket/renderRocketCounter";
 import { getRocketCounter } from "./objects/rocket/rocketCounter";
 import { player } from "./objects/spaceShip/initSpaceShip";
 import { AnimationKeys } from "./types/animationKeys";
+import { renderScoreCounter } from "./objects/score/renderScoreCounter";
 
 let timer: number | null = null;
 
 export function update(this: Phaser.Scene): void {
   renderCurrentHealthPercents.call(this);
+  renderScoreCounter.call(this);
 
   if (getIsGameOver()) {
     initGameOver.call(this);

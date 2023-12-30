@@ -1,6 +1,7 @@
 import * as Phaser from "phaser";
 
 import { initExplosion } from "../explosion/initExplosion";
+import { increaseScoreCounter } from "../score/scoreCounter";
 
 export function asteroidExplosion(
   this: Phaser.Scene,
@@ -10,4 +11,5 @@ export function asteroidExplosion(
   initExplosion.call(this, asteroid, rocket);
   asteroid.destroy();
   rocket?.destroy();
+  increaseScoreCounter();
 }
