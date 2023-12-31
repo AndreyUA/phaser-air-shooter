@@ -1,14 +1,25 @@
 import * as Phaser from "phaser";
+import VirtualJoystick from "phaser3-rex-plugins/plugins/virtualjoystick.js";
 
 import { GameObject } from "../../types/gameObjects";
 import { AnimationKeys } from "../../types/animationKeys";
 
 export let cursors: Phaser.Types.Input.Keyboard.CursorKeys;
+export let joystick: VirtualJoystick;
 
 export function initKeyboardActionsAndGameAnimations(this: Phaser.Scene): void {
   if (this.input.keyboard) {
     cursors = this.input.keyboard.createCursorKeys();
   }
+
+  // ! Joystick initialization
+  joystick = new VirtualJoystick(this, {
+    x: 50,
+    y: 550,
+    radius: 20,
+    base: this.add.circle(0, 0, 20, 0x888888),
+    thumb: this.add.circle(0, 0, 10, 0xcccccc),
+  });
 
   this.anims.create({
     key: AnimationKeys.LEFT,

@@ -1,13 +1,14 @@
 import "./style.css";
 
 import * as Phaser from "phaser";
+import VirtualJoystickPlugin from "phaser3-rex-plugins/plugins/virtualjoystick-plugin.js";
 
 import { preload } from "./preload";
 import { create } from "./create";
 import { update } from "./update";
 import { ScreenResolution } from "./types/screenResolution";
 
-const config: Phaser.Types.Core.GameConfig = {
+export const config: Phaser.Types.Core.GameConfig = {
   type: Phaser.AUTO,
   width: ScreenResolution.WIDTH,
   height: ScreenResolution.HEIGHT,
@@ -22,6 +23,15 @@ const config: Phaser.Types.Core.GameConfig = {
       gravity: { y: 300 },
       debug: false,
     },
+  },
+  plugins: {
+    global: [
+      {
+        key: "rexVirtualJoystick",
+        plugin: VirtualJoystickPlugin,
+        start: true,
+      },
+    ],
   },
 };
 

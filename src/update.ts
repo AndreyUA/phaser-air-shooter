@@ -2,7 +2,10 @@ import { ROCKET_RELOAD_TIME } from "./constants/rocketReloadTime";
 import { renderCurrentHealthPercents } from "./objects/healthIndicator/renderCurrentHealthPercents";
 import { initGameOver } from "./objects/gameOver/initGameOver";
 import { getIsGameOver } from "./objects/gameOver/isGameOver";
-import { cursors } from "./objects/keyboardActionsAndGameAnimations/initKeyboardActionsAndGameAnimations";
+import {
+  cursors,
+  joystick,
+} from "./objects/keyboardActionsAndGameAnimations/initKeyboardActionsAndGameAnimations";
 import { reloadIndicator } from "./objects/reloadIndicator/initReloadIndicator";
 import { initRocket } from "./objects/rocket/initRocket";
 import { renderRocketCounter } from "./objects/rocket/renderRocketCounter";
@@ -22,6 +25,24 @@ export function update(this: Phaser.Scene): void {
     this.scene.pause();
 
     return;
+  }
+
+  const angle = joystick.angle;
+
+  // ! Move left with joystick
+  if ((angle > -180 && angle < -90) || (angle > 90 && angle < 180)) {
+    // TODO: why is it not working?
+    console.log("move left");
+    player.setVelocityX(-360);
+    player.anims.play(AnimationKeys.LEFT, true);
+  }
+
+  // ! Move right with joystick
+  if ((angle > -90 && angle < 0) || (angle > 0 && angle < 90)) {
+    // TODO: why is it not working?
+    console.log("move right");
+    player.setVelocityX(360);
+    player.anims.play(AnimationKeys.RIGHT, true);
   }
 
   // ! Rocket fire
