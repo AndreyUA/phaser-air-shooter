@@ -51,13 +51,13 @@ export function update(this: Phaser.Scene): void {
 
   // ! Move left
   if (cursors.left.isDown) {
-    player.setVelocityX(-360);
+    player.setVelocityX(-720);
     player.anims.play(AnimationKeys.LEFT, true);
   }
 
   // ! Move right
   if (cursors.right.isDown) {
-    player.setVelocityX(360);
+    player.setVelocityX(720);
     player.anims.play(AnimationKeys.RIGHT, true);
   }
 
